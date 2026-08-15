@@ -127,7 +127,10 @@ function render(){
      let slot=-1;
      for(let k=0;k<SLOT.length;k++){ if(xx-lastLab[k]>62){slot=k;break;} }
      if(slot>=0){ lastLab[slot]=xx;
-       s+=`<text x="${xx}" y="${yy+SLOT[slot]}" text-anchor="middle" font-size="10" fill="${PUR}" font-weight="bold">${String(v.bill).replace("Con.Res.","C.R.").replace("J.Res.","J.R.")}</text>`;}
+       let lb=String(v.bill).replace("Con.Res.","C.R.").replace("J.Res.","J.R.");
+       const m=lb.match(/^\s*(H\.?J\.?R\.?|S\.?J\.?R\.?|H\.?C\.?R\.?|H\.?Res\.?|S\.?Res\.?|H\.?R\.?|S\.?)\s*([0-9]+)/);
+       lb=m?`${m[1]} ${m[2]}`:(lb.length>16?lb.slice(0,15)+"…":lb);   // never let a long title wreck the plot
+       s+=`<text x="${xx}" y="${yy+SLOT[slot]}" text-anchor="middle" font-size="10" fill="${PUR}" font-weight="bold">${lb}</text>`;}
    });
  }
  const vmax=Math.max(1,...wk.weeks.map((_,i)=>wk.volume.D[i]+wk.volume.R[i]+wk.volume.O[i]));
@@ -142,7 +145,7 @@ function render(){
   for(const [p,col] of [["D",BLUE],["R",RED],["O",GRAY]]){
     const h=(HV-6)*wk.volume[p][i]/vmax; y-=h;
     if(h>0.3) s+=`<rect x="${xx}" y="${y}" width="${bw}" height="${h}" fill="${col}"/>`;}});
- s+=`<text x="${(ML+W-MR)/2}" y="${HM+GAP+HV+MB+6}" text-anchor="middle" font-size="13">Week</text>`;
+ s+=`<text x="${(ML+W-MR)/2}" y="${HM+GAP+HV+MB+6}" text-anchor="middle" font-size="13">${(wk.vol_label||"").indexOf("mo")>-1?"Month":((wk.vol_label||"").indexOf("day")>-1?"Day":"Week")}</text>`;
  const LY=HM+GAP+HV+MB+26; let LX=ML+2;
  const seg=(draw,label,wpx,toff)=>{ s+=draw(LX,LY); s+=`<text x="${LX+toff}" y="${LY+4}" font-size="12">${label}</text>`; LX+=wpx; };
  let lnCol=DARK;
