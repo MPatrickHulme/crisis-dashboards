@@ -77,7 +77,11 @@ function render(){
    s+=`<text x="${ML+iw+8}" y="${yR(p)+4}" font-size="12" fill="${PUR}">${p}%</text>`;
    s+=`<line x1="${ML+iw}" x2="${ML+iw+4}" y1="${yR(p)}" y2="${yR(p)}" stroke="${PUR}"/>`;}
  s+=`<text transform="translate(${ML+iw+52},${(MT+HM)/2}) rotate(90)" text-anchor="middle" class="axlab" fill="${PUR}">Vote share supporting U.S. force (direction-adjusted)</text>`;
- s+=`<text transform="translate(17,${(MT+HM)/2}) rotate(-90)" text-anchor="middle" class="axlab">Congressional Sentiment (CSS)&#8194;&#8592; oppose&#8194;&#8194;support &#8594;</text>`;
+ // axis title centred on the plot; the oppose/support arrows anchor to CSS 0 so the
+ // boundary between them sits exactly on the zero line rather than wherever the text breaks
+ s+=`<text transform="translate(15,${(MT+HM)/2}) rotate(-90)" text-anchor="middle" class="axlab">Congressional Sentiment (CSS)</text>`;
+ s+=`<text transform="translate(31,${yL(0)}) rotate(-90)" text-anchor="start" class="axlab" fill="#555">&#8194;support &#8594;</text>`;
+ s+=`<text transform="translate(31,${yL(0)}) rotate(-90)" text-anchor="end" class="axlab" fill="#555">&#8592; oppose&#8194;</text>`;
  const shortWin=(X1-X0)<=70*86400e3;
  for(const d of monthTicks()){ const xx=x(d.getTime());
   s+=`<line x1="${xx}" x2="${xx}" y1="${HM+GAP+HV}" y2="${HM+GAP+HV+5}" stroke="#333"/>`;
