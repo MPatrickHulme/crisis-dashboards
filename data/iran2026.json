@@ -1,0 +1,124 @@
+{
+ "source": "us_iran_2026_daily_combat_data.xlsx",
+ "coverage": [
+  "2026-02-28",
+  "2026-08-17"
+ ],
+ "levels": {
+  "sustained": "Sustained U.S. combat",
+  "flareup": "Documented flare-up",
+  "pause": "Ceasefire / no documented U.S. kinetic action"
+ },
+ "spans": [
+  {
+   "start": "2026-02-28",
+   "end": "2026-04-07",
+   "level": "sustained"
+  },
+  {
+   "start": "2026-04-08",
+   "end": "2026-05-03",
+   "level": "pause"
+  },
+  {
+   "start": "2026-05-04",
+   "end": "2026-05-04",
+   "level": "flareup"
+  },
+  {
+   "start": "2026-05-05",
+   "end": "2026-05-06",
+   "level": "pause"
+  },
+  {
+   "start": "2026-05-07",
+   "end": "2026-05-07",
+   "level": "flareup"
+  },
+  {
+   "start": "2026-05-08",
+   "end": "2026-05-24",
+   "level": "pause"
+  },
+  {
+   "start": "2026-05-25",
+   "end": "2026-05-27",
+   "level": "flareup"
+  },
+  {
+   "start": "2026-05-28",
+   "end": "2026-05-30",
+   "level": "pause"
+  },
+  {
+   "start": "2026-05-31",
+   "end": "2026-05-31",
+   "level": "flareup"
+  },
+  {
+   "start": "2026-06-01",
+   "end": "2026-06-05",
+   "level": "pause"
+  },
+  {
+   "start": "2026-06-06",
+   "end": "2026-06-06",
+   "level": "flareup"
+  },
+  {
+   "start": "2026-06-07",
+   "end": "2026-06-09",
+   "level": "pause"
+  },
+  {
+   "start": "2026-06-10",
+   "end": "2026-06-10",
+   "level": "flareup"
+  },
+  {
+   "start": "2026-06-11",
+   "end": "2026-06-25",
+   "level": "pause"
+  },
+  {
+   "start": "2026-06-26",
+   "end": "2026-06-27",
+   "level": "flareup"
+  },
+  {
+   "start": "2026-06-28",
+   "end": "2026-07-06",
+   "level": "pause"
+  },
+  {
+   "start": "2026-07-07",
+   "end": "2026-07-08",
+   "level": "flareup"
+  },
+  {
+   "start": "2026-07-09",
+   "end": "2026-07-10",
+   "level": "pause"
+  },
+  {
+   "start": "2026-07-11",
+   "end": "2026-07-23",
+   "level": "sustained"
+  },
+  {
+   "start": "2026-07-24",
+   "end": "2026-07-28",
+   "level": "pause"
+  },
+  {
+   "start": "2026-07-29",
+   "end": "2026-07-29",
+   "level": "flareup"
+  },
+  {
+   "start": "2026-07-30",
+   "end": "2026-08-17",
+   "level": "pause"
+  }
+ ]
+}
