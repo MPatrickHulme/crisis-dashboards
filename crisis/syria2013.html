@@ -16,6 +16,10 @@ h2{font-size:15px;margin:2px 0 8px;text-align:center;font-weight:normal;color:#3
 .cssbox{font-family:-apple-system,system-ui,sans-serif;font-size:12.5px;color:#33405a;max-width:1130px;margin:10px auto 0;background:#f7f9fb;border:1px solid #e3e8ee;border-radius:8px;padding:9px 13px;line-height:1.6}
 .cssbox b{color:#1a1a1a}.cssbox .v{font-variant-numeric:tabular-nums;font-weight:600}
 .cssbox .sep{color:#9aa5b1;margin:0 7px}
+.evkey{font-family:-apple-system,system-ui,sans-serif;font-size:11.5px;color:#2f6f6f;max-width:1130px;margin:7px auto 0;display:flex;flex-wrap:wrap;gap:3px 20px;align-items:baseline}
+.evkey .hd{font-weight:600;color:#1f4f4f;margin-right:4px}
+.evkey .ev{white-space:nowrap}
+.evkey .ev b{display:inline-block;min-width:15px;height:15px;line-height:15px;text-align:center;border:1px solid #2f6f6f;border-radius:50%;font-size:9.5px;margin-right:3px}
 .note{font-family:-apple-system,system-ui,sans-serif;font-size:11.5px;color:#5a6470;line-height:1.5;max-width:1130px;margin:6px auto 0}
 text{font-family:Georgia,serif}
 .axlab{font-size:12.5px;fill:#333}
@@ -29,6 +33,7 @@ text{font-family:Georgia,serif}
  <label><input type="checkbox" id="cbp" checked> show party vote shares</label>
 </div>
 <div id="chart"></div>
+<div class="evkey"><span class="hd">Key events</span><span class="ev"><b>1</b> Aug&nbsp;21, 2013 &mdash; Ghouta chemical attack</span><span class="ev"><b>2</b> Aug&nbsp;31, 2013 &mdash; Obama seeks authorization from Congress</span><span class="ev"><b>3</b> Sep&nbsp;14, 2013 &mdash; U.S.&ndash;Russia deal on chemical weapons</span></div>
 <div class="cssbox"><b>Crisis CSS:</b> <span class="v">&minus;0.267</span> overall <span class="sep">&middot;</span> R <span class="v">&minus;0.370</span> <span class="sep">&middot;</span> D <span class="v">&minus;0.149</span> <span style="color:#7b8794">&mdash; speaker-weighted tripartite ensemble, &minus;0.5 oppose to +0.5 support.</span></div>
 <div id="tip"></div>
 <div class="note"><b>Reading the figure.</b> Left axis: Congressional Sentiment Score &mdash; the mean per-lawmaker position on U.S. military force
@@ -140,11 +145,13 @@ function render(){
   s+=`<text x="${tx}" y="${yL(0.5)}" font-size="11.5" fill="${GOLD}" font-style="italic" text-anchor="${anc}">${CFG.combat_label}</text>`;
   s+=`<text x="${tx}" y="${yL(0.5)+15}" font-size="11.5" fill="${GOLD}" font-style="italic" text-anchor="${anc}">(${cd})</text>`;}
 
+ let _evn=0;
  for(const [ed,elbl] of (CFG.events||[])){ const et=new Date(ed).getTime();
-  if(!(et>=X0&&et<=X1)) continue; const ex=x(et);
+  if(!(et>=X0&&et<=X1)) continue; const ex=x(et); _evn++;
   for(const [y0,y1] of [[MT,HM],[HM+GAP+CBTOFF,HM+GAP+CBTOFF+HV]])
    s+=`<line x1="${ex}" x2="${ex}" y1="${y0}" y2="${y1}" stroke="${EVC}" stroke-dasharray="3 3" stroke-width="1.2" opacity=".85"/>`;
-  s+=`<text transform="translate(${ex-4},${MT+126}) rotate(-90)" text-anchor="start" font-size="10.5" fill="${EVC}" font-style="italic">${elbl}</text>`;}
+  s+=`<circle cx="${ex}" cy="${MT+9}" r="8" fill="#fff" stroke="${EVC}" stroke-width="1.2"/>`;
+  s+=`<text x="${ex}" y="${MT+12.5}" text-anchor="middle" font-size="9.5" font-weight="bold" fill="${EVC}">${_evn}</text>`;}
  if(CFG.note&&CFG.note_date){ const nx=x(new Date(CFG.note_date).getTime());
   s+=`<text x="${Math.min(nx,ML+iw-8)}" y="${yL(-0.44)}" font-size="11" fill="#777" font-style="italic" text-anchor="end">${CFG.note}</text>`;}
  for(const [m,col] of SER){
