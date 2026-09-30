@@ -4263,8 +4263,35 @@
   "notes": "No use-of-force roll call. A three-lens search plus adversarial verification checked 12 recorded roll calls in the 115th Congress tied to the 2017-18 North Korea crisis; every one was confirmed to exist and to have the reported tally, and every one was confirmed NON-force: economic sanctions (H.R. 1644 Korean Interdiction and Modernization of Sanctions Act, 419-1; H.R. 3364 CAATSA), state-sponsor-of-terrorism designation reporting (H.R. 479, 394-1), human rights reauthorization (H.R. 2061, 415-0), and non-binding condemnation (H.Res. 92, 398-3). None authorizes, restricts, or funds U.S. military force. The Lieu/Markey 'No Unconstitutional Strike Against North Korea Act' (H.R. 4837 / S. 2016) never received a floor vote."
  },
  "syria2013": {
-  "votes": [],
-  "notes": "No roll call. All 932 GovTrack-mirrored 2013 roll calls were scanned; the Syria AUMF (S.J.Res. 21) was reported out of Senate Foreign Relations 10-7 on Sept 4, 2013 but was shelved after the Sept 14 U.S.-Russia framework on chemical weapons, and never reached the floor in either chamber."
+  "votes": [
+   {
+    "chamber": "Senate",
+    "committee": true,
+    "body": "Senate Foreign Relations Committee",
+    "bill": "S.J.Res. 21",
+    "short_label": "SFRC (S.J.R. 21)",
+    "title": "Authorization for the Use of Military Force Against the Government of Syria to Respond to Use of Chemical Weapons",
+    "vote_question": "Committee business meeting: order the measure reported favorably",
+    "date": "2013-09-04",
+    "rollcall": null,
+    "yea": 10,
+    "nay": 7,
+    "dem_yea": 7,
+    "dem_nay": 2,
+    "rep_yea": 3,
+    "rep_nay": 5,
+    "ind_yea": 0,
+    "ind_nay": 0,
+    "result": "Ordered reported 10-7, 1 present (Markey, D-MA); never reached the Senate floor",
+    "yea_meaning": "Send the Syria AUMF to the full Senate (authorize limited U.S. strikes on the Syrian government over its chemical-weapons use)",
+    "yea_supports_force": true,
+    "congress_url": "https://www.congress.gov/bill/113th-congress/senate-joint-resolution/21",
+    "rollcall_url": "https://www.lawfaremedia.org/article/sfrc-approves-syria-authorization-language-updated",
+    "voteview_url": "",
+    "_notes": "Committee vote, not a floor roll call (no voteview/clerk record). Yeas 10: D Menendez, Boxer, Cardin, Shaheen, Coons, Durbin, Kaine; R Corker, McCain, Flake. Nays 7: D Udall, Murphy; R Risch, Rubio, Johnson, Barrasso, Paul. Present: Markey (D). Tally and roster per NBC News (9/4/2013), Lawfare, and Wikipedia; congress.gov/LegiScan actions: ordered reported 9/4, reported without written report 9/6, Calendar No. 166, motions to proceed 9/9-9/10, never voted on."
+   }
+  ],
+  "notes": "No floor roll call in either chamber (all 932 GovTrack-mirrored 2013 roll calls scanned). Plotted: the Senate Foreign Relations Committee vote of Sept 4, 2013 ordering S.J.Res. 21 reported 10-7 (hollow marker = committee vote). The AUMF was shelved after the Sept 10-14 U.S.-Russia chemical-weapons framework."
  },
  "wwi": {
   "votes": [
