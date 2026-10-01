@@ -95,7 +95,7 @@ function monthTicks(){ const t=[]; const d0=new Date(X0); let d=new Date(d0.getF
  const dd=(X1-X0)/86400e3; const step= dd>2600?12 : dd>1150?6 : dd>400?2 : 1;
  while(d.getTime()<=X1){ t.push(new Date(d)); d=new Date(d.getFullYear(),d.getMonth()+step,1);} return t;}
 function fsOf(y,n,dir){ if(y+n<=0) return null; const yp=100*y/(y+n); return dir? yp : 100-yp; }
-let show8=!CFG.no_e8, showV=true, showP=true; const ALT=CFG.alt||"e8", MAIN=CFG.main||"tri";
+let show8=!!CFG.alt, showV=true, showP=true; const ALT=CFG.alt||"e8", MAIN=CFG.main||"tri";   // dashed lines only ever show a member subset; the 8-item series is never drawn
 function render(){
  const H=HM+GAP+CBTOFF+HV+(HASMEDIA?MS+MSGAP:0)+MB+LEG;
  let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" xmlns="http://www.w3.org/2000/svg">`;
@@ -225,7 +225,6 @@ function render(){
  const lnD=(xx,yy)=>`<line x1="${xx}" x2="${xx+30}" y1="${yy}" y2="${yy}" stroke="#555" stroke-width="1.5" stroke-dasharray="6 4"/>`;
  seg(lnS,"Overall",CFG.alt?90:103,37); lnCol=RED; seg(lnS,"Republicans",CFG.alt?112:128,37); lnCol=BLUE; seg(lnS,"Democrats",CFG.alt?106:122,37);   // tighter when two line sets share the key
  if(CFG.alt){ lnCol="#555"; const _ml=CFG.main_label||"All members"; seg(lnS,_ml,Math.round(45+_ml.length*6.2),37); seg(lnD,CFG.alt_label,Math.round(45+CFG.alt_label.length*6.2),37); }
- else if(!CFG.no_e8){ lnCol="#555"; seg(lnS,"tripartite",108,37); seg(lnD,"8-item",92,37); }
  s+=`<line x1="${LX}" x2="${LX}" y1="${LY-12}" y2="${LY+12}" stroke="#bbb"/>`; LX+=14;
  const hasC=votes.some(v=>v.committee||v.projected), hasCm=votes.some(v=>v.committee), hasPj=votes.some(v=>v.projected);   // committee votes get a hollow key entry; floor keys then only if present
  if(!hasC||votes.some(v=>v.chamber==="Senate"&&!v.committee&&!v.projected)){
@@ -288,7 +287,7 @@ function showTip(v,ev){
  const bw=360, px=Math.min(ev.clientX+16,window.innerWidth-bw-16), py=Math.min(ev.clientY+14,window.innerHeight-300);
  tip.style.left=px+"px"; tip.style.top=py+"px";
 }
-document.getElementById("cb8").addEventListener("change",e=>{show8=e.target.checked;render();});
+const _cb8=document.getElementById("cb8"); if(_cb8) _cb8.addEventListener("change",e=>{show8=e.target.checked;render();});
 document.getElementById("cbv").addEventListener("change",e=>{showV=e.target.checked;render();});
 document.getElementById("cbp").addEventListener("change",e=>{showP=e.target.checked;render();});
 render();
