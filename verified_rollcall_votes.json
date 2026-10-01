@@ -4315,7 +4315,8 @@
     "rep_nay": 14,
     "result": "Not a vote. 26 yes or leaning yes, 20 no or leaning no, 54 undecided (29 D, 23 R, 2 I). The Hill, Sept 9, 2013, 12:40 p.m.",
     "congress_url": "https://www.congress.gov/bill/113th-congress/senate-joint-resolution/21",
-    "_notes": "Projected share among declared/leaning senators only. Party totals reconcile to the 52 D / 46 R / 2 I Senate of Sept 2013."
+    "_notes": "Projected share among declared/leaning senators only. Party totals reconcile to the 52 D / 46 R / 2 I Senate of Sept 2013.",
+    "click_url": "https://thehill.com/homenews/administration/319933-the-hills-syria-whip-list"
    },
    {
     "projected": true,
@@ -4344,7 +4345,8 @@
     "congress_url": "",
     "_notes": "Projected share among declared/leaning members only; 168 members had no recorded position in the list.",
     "label_dy": 4,
-    "label_dx": 12
+    "label_dx": 12,
+    "click_url": "https://thehill.com/homenews/administration/319933-the-hills-syria-whip-list"
    }
   ],
   "notes": "No floor roll call in either chamber (all 932 GovTrack-mirrored 2013 roll calls scanned). Plotted: the Senate Foreign Relations Committee vote of Sept 4, 2013 ordering S.J.Res. 21 reported 10-7 (hollow marker = committee vote). The AUMF was shelved after the Sept 10-14 U.S.-Russia chemical-weapons framework. Also plotted: The Hill's Sept 9 whip counts for each chamber (dashed hollow markers): projected shares among declared or leaning members, not votes."
