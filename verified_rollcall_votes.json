@@ -4292,8 +4292,8 @@
    },
    {
     "projected": true,
-    "bill": "Whip count",
-    "short_label": "Whip count",
+    "bill": "Senate Whip Count (The Hill)",
+    "short_label": "Senate Whip Count (The Hill)",
     "date": "2013-09-09",
     "rollcall": null,
     "yea_supports_force": true,
@@ -4319,8 +4319,8 @@
    },
    {
     "projected": true,
-    "bill": "Whip count",
-    "short_label": "Whip count",
+    "bill": "House Whip Count (The Hill)",
+    "short_label": "House Whip Count (The Hill)",
     "date": "2013-09-09",
     "rollcall": null,
     "yea_supports_force": true,
